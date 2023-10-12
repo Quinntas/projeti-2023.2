@@ -1,0 +1,8 @@
+{
+  "popCount": 100000,
+  "days": 15,
+  "mapWidth": 100,
+  "mapHeight": 100,
+  "infectionProb": 10,
+  "recoveryRate": 30
+}
