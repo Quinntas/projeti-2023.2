@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 from src.classes.bob import Bob, BobStatus
 from src.classes.result import Result
 from src.classes.virus import Virus
+from src.modules.core.module_loader import loaded_models
 
 
 class Engine:
@@ -52,6 +53,8 @@ class Engine:
                     recovery_rate=self.params["bob"]["immuneSystem"][bob.immuneSystem.name]["recoveryRate"],
                     lethality=_virus.lethality,
                 )
+                for module in loaded_models:
+                    module.run(bob)
 
             self.results.append(Result(
                 day=day + 1,
@@ -66,3 +69,7 @@ class Engine:
             print(f"Infected: {len([bob for bob in self.bobs if bob.status == BobStatus.INFECTED])}")
             print(f"Recovered: {len([bob for bob in self.bobs if bob.status == BobStatus.RECOVERED])}")
             print()
+
+        print("[SIMULATION] Finished!")
+
+        print(loaded_models[0].__dict__)
