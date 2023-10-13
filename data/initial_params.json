@@ -1,8 +1,29 @@
 {
-  "popCount": 100000,
-  "days": 15,
+  "popCount": 50000,
+  "days": 30,
   "mapWidth": 100,
   "mapHeight": 100,
-  "infectionProb": 10,
-  "recoveryRate": 30
+  "virus": {
+    "name": "Coronga",
+    "infectiousness": 10,
+    "infectionProb": 5,
+    "infectionRadius": 1,
+    "lethality": 10,
+    "mutationProb": 5,
+    "mutationFactor": 5
+  },
+  "bob": {
+    "initialHealth": 100,
+    "immuneSystem": {
+      "WEAK": {
+        "recoveryRate": 5
+      },
+      "AVG": {
+        "recoveryRate": 10
+      },
+      "STRONG": {
+        "recoveryRate": 15
+      }
+    }
+  }
 }

@@ -7,3 +7,4 @@ class Result(BaseClass):
     healthy: int
     infected: int
     recovered: int
+    dead: int
